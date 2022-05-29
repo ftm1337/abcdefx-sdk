@@ -1,7 +1,7 @@
 {
   "name": "@ftm1337/sdk15",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "🛠 An SDK for building applications on top of Uniswap.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -13,8 +13,16 @@
     "url": "git+https://github.com/Uniswap/uniswap-sdk.git"
   },
   "keywords": [
+    "ftm1337",
+    "guru network",
     "uniswap",
-    "ethereum"
+    "ethereum",
+    "multivac",
+    "mtv",
+    "dex",
+    "dxdao",
+    "swapr",
+    "dao"
   ],
   "module": "dist/sdk.esm.js",
   "scripts": {
