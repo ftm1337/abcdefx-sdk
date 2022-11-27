@@ -57,9 +57,12 @@ export function currencyEquals(currencyA: Currency, currencyB: Currency): boolea
 }
 
 export const WETH = {
-  [ChainId.MAINNET]: new Token(    ChainId.MAINNET,    '0x8E321596267a4727746b2F48BC8736DB5Da26977',    18,    'WMTV',    'Wrapped MTV'  ),
-  [ChainId.ROPSTEN]: new Token(    ChainId.ROPSTEN,    '0xc778417E063141139Fce010982780140Aa0cD5Ab',    18,    'WETH',    'Wrapped Ether'  ),
-  [ChainId.RINKEBY]: new Token(    ChainId.RINKEBY,    '0xc778417E063141139Fce010982780140Aa0cD5Ab',    18,    'WETH',    'Wrapped Ether'  ),
-  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', 18, 'WETH', 'Wrapped Ether'),
-  [ChainId.KOVAN]: new Token(ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether')
+  [ChainId.MAINNET]:	new Token(ChainId.MAINNET,	'0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',	18,	'WMTV',	'Wrapped Ether'),
+  [ChainId.ROPSTEN]:	new Token(ChainId.ROPSTEN,	'0xc778417E063141139Fce010982780140Aa0cD5Ab',	18,	'WETH',	'Wrapped Ether'),
+  [ChainId.RINKEBY]:	new Token(ChainId.RINKEBY,	'0xc778417E063141139Fce010982780140Aa0cD5Ab',	18,	'WETH',	'Wrapped Ether'),
+  [ChainId.GÖRLI]:		new Token(ChainId.GÖRLI,	'0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6',	18,	'WETH',	'Wrapped Ether'),
+  [ChainId.KOVAN]:		new Token(ChainId.KOVAN,	'0xd0A1E359811322d97991E03f863a0C30C2cF029C',	18,	'WETH',	'Wrapped Ether'),
+  [ChainId.FANTOM]:		new Token(ChainId.FANTOM,	'0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',	18,	'WFTM',	'Wrapped Fantom'),
+  [ChainId.ECHELON]:	new Token(ChainId.ECHELON,	'0xadEE5159f4f82a35B9068A6c810bdc6c599Ba6a8',	18,	'WECH',	'Wrapped Echelon'),
+  [ChainId.MULTIVAC]:	new Token(ChainId.MULTIVAC,	'0x8E321596267a4727746b2F48BC8736DB5Da26977',	18,	'WMTV',	'Wrapped MTV')
 }
