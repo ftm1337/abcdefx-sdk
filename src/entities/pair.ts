@@ -21,6 +21,9 @@ import { sqrt, parseBigintIsh } from '../utils'
 import { InsufficientReservesError, InsufficientInputAmountError } from '../errors'
 import { Token } from './token'
 
+import { TEN } from '../constants'
+
+
 let PAIR_ADDRESS_CACHE: { [token0Address: string]: { [token1Address: string]: string } } = {}
 
 
@@ -140,7 +143,7 @@ export class Pair {
 	///////////////////////////
 
 
-    function _SolidlyLib_k(x: number, y: number, _d0: number, _d1: number) {
+    public _SolidlyLib_k(x: any, y: any, _d0: any, _d1: any) {
         let _x = x * 1e18 / _d0;
         let _y = y * 1e18 / _d1;
         let _a = (_x * _y) / 1e18;
@@ -148,23 +151,23 @@ export class Pair {
         return _a * _b / 1e18;  // x3y+y3x >= k
     }
 
-    function _SolidlyLib_f(x0: number, y: number) {
+    public _SolidlyLib_f(x0: any, y: any) {
         return x0*(y*y/1e18*y/1e18)/1e18+(x0*x0/1e18*x0/1e18)*y/1e18;
     }
 
-    function _SolidlyLib_d( x0: number, y: number) {
+    public _SolidlyLib_d( x0: any, y: any) {
         return 3*x0*(y*y/1e18)/1e18+(x0*x0/1e18*x0/1e18);
     }
 
-    function _SolidlyLib_get_y( x0: number,  xy: number,  y: number)  {
+    public _SolidlyLib_get_y( x0: any,  xy: any,  y: any)  {
         for ( let i = 0; i < 255; i++) {
             let y_prev = y;
-            let k = _SolidlyLib_f(x0, y);
+            let k = this._SolidlyLib_f(x0, y);
             if (k < xy) {
-                 let dy = (xy - k)*1e18/_SolidlyLib_d(x0, y);
+                 let dy = (xy - k)*1e18/this._SolidlyLib_d(x0, y);
                 y = y + dy;
             } else {
-                 let dy = (k - xy)*1e18/_SolidlyLib_d(x0, y);
+                 let dy = (k - xy)*1e18/this._SolidlyLib_d(x0, y);
                 y = y - dy;
             }
             if (y > y_prev) {
@@ -198,22 +201,22 @@ export class Pair {
     }
     const inputReserve = this.reserveOf(inputAmount.token)
     const outputReserve = this.reserveOf(inputAmount.token.equals(this.token0) ? this.token1 : this.token0)
-    const inputAmountWithFee = JSBI.multiply(inputAmount.raw, _996)
+    const inputAmountWithFee = JSBI.multiply(inputAmount.raw, _997)
 
 	let _SolidlyLib_tokenOut = inputAmount.token.equals(this.token0) ? this.token1 : this.token0;
 
-    const decimalsIn = JSBI.exponentiate(10, inputAmount.token.decimals);
-    const decimalsOut = JSBI.exponentiate(10, _SolidlyLib_tokenOut.decimals);
+    const decimalsIn = JSBI.exponentiate(TEN, JSBI.BigInt(inputAmount.token.decimals) );
+    const decimalsOut = JSBI.exponentiate(TEN, JSBI.BigInt(_SolidlyLib_tokenOut.decimals) );
 
 
-    ///function _SolidlyLib_getAmountOut(amountIn: number, tokenIn: any, _reserve0: number, _reserve1: number) {
+    ///function _SolidlyLib_getAmountOut(amountIn: any, _reserve0: any, _reserve1: any) {
     	///	Assumes amountIn to be deducted by fee
-        let xy =  _SolidlyLib_k(inputReserve, outputReserve, decimalsIn, decimalsOut);
-        let reserveInAdj = JSBI.divide( JSBI.multiply(inputReserve, 1e18), decimalsIn) ;
-        let reserveOutAdj = JSBI.divide( JSBI.multiply(outputReserve, 1e18), decimalsOut) ;
-        amountInAdj = JSBI.divide( JSBI.multiply(inputAmountWithFee, 1e18), decimalsIn) ;
-        let y = reserveOutAdj - _SolidlyLib_get_y(amountInAdj+reserveInAdj, xy, reserveOutAdj);
-        const _tokenOutAmount = JSBI.divide( JSBI.multiply(y, decimalsOut) , 1e18 );
+        let xy =  this._SolidlyLib_k(inputReserve.raw, outputReserve.raw, decimalsIn, decimalsOut);
+        let reserveInAdj = JSBI.divide( JSBI.multiply(inputReserve.raw, JSBI.BigInt(1e18)), decimalsIn) ;
+        let reserveOutAdj = JSBI.divide( JSBI.multiply(outputReserve.raw, JSBI.BigInt(1e18)), decimalsOut) ;
+        let amountInAdj = JSBI.divide( JSBI.multiply(inputAmountWithFee, JSBI.BigInt(1e18)), decimalsIn) ;
+        let y = JSBI.subtract( reserveOutAdj, JSBI.BigInt(this._SolidlyLib_get_y( (JSBI.add(amountInAdj, reserveInAdj)), xy, reserveOutAdj)) );
+        const _tokenOutAmount = JSBI.divide( JSBI.multiply( y, decimalsOut) , JSBI.BigInt(1e18) );
     ///}
 
 
