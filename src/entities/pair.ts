@@ -201,7 +201,7 @@ export class Pair {
     }
     const inputReserve = this.reserveOf(inputAmount.token)
     const outputReserve = this.reserveOf(inputAmount.token.equals(this.token0) ? this.token1 : this.token0)
-    const inputAmountWithFee = JSBI.multiply(inputAmount.raw, _997)
+    const inputAmountWithFee = JSBI.divide( JSBI.multiply(inputAmount.raw, _997), _1000 );
 
 	let _SolidlyLib_tokenOut = inputAmount.token.equals(this.token0) ? this.token1 : this.token0;
 
