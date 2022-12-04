@@ -61,8 +61,14 @@ export const WETH = {
   [ChainId.ROPSTEN]:	new Token(ChainId.ROPSTEN,	'0xc778417E063141139Fce010982780140Aa0cD5Ab',	18,	'WETH',	'Wrapped Ether'),
   [ChainId.RINKEBY]:	new Token(ChainId.RINKEBY,	'0xc778417E063141139Fce010982780140Aa0cD5Ab',	18,	'WETH',	'Wrapped Ether'),
   [ChainId.GÖRLI]:		new Token(ChainId.GÖRLI,	'0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6',	18,	'WETH',	'Wrapped Ether'),
+  [ChainId.CRONOS]:		new Token(ChainId.CRONOS,	'0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23',	18,	'WCRO',	'Wrapped CRO'),
   [ChainId.KOVAN]:		new Token(ChainId.KOVAN,	'0xd0A1E359811322d97991E03f863a0C30C2cF029C',	18,	'WETH',	'Wrapped Ether'),
+  [ChainId.BSC]:		new Token(ChainId.BSC,		'0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',	18,	'WBNB',	'Wrapped BNB'),
+  [ChainId.XDAI]:		new Token(ChainId.XDAI,		'0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d',	18,	'WXDAI','Wrapped XDAI'),
+  [ChainId.MATIC]:		new Token(ChainId.MATIC,	'0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',	18,	'WMATIC','Wrapped Matic'),
   [ChainId.FANTOM]:		new Token(ChainId.FANTOM,	'0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',	18,	'WFTM',	'Wrapped Fantom'),
+  [ChainId.KCC]:		new Token(ChainId.KCC,		'0x4446Fc4eb47f2f6586f9fAAb68B3498F86C07521',	18,	'WKCS',	'Wrapped KCS'),
   [ChainId.ECHELON]:	new Token(ChainId.ECHELON,	'0xadEE5159f4f82a35B9068A6c810bdc6c599Ba6a8',	18,	'WECH',	'Wrapped Echelon'),
+  [ChainId.AVALANCHE]:	new Token(ChainId.AVALANCHE,'0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',	18,	'WAVAX','Wrapped AVAX'),
   [ChainId.MULTIVAC]:	new Token(ChainId.MULTIVAC,	'0x8E321596267a4727746b2F48BC8736DB5Da26977',	18,	'WMTV',	'Wrapped MTV')
 }

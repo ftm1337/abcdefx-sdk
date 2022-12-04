@@ -8,9 +8,15 @@ export enum ChainId {
   ROPSTEN = 3,
   RINKEBY = 4,
   GÖRLI = 5,
+  CRONOS = 25,
   KOVAN = 42,
+  BSC = 56,
+  XDAI = 100,
+  MATIC = 137,
   FANTOM = 250,
+  KCC = 321,
   ECHELON = 3000,
+  AVALANCHE = 43114,
   MULTIVAC = 62621
 }
 
