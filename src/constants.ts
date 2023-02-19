@@ -16,8 +16,9 @@ export enum ChainId {
   FANTOM = 250,
   KCC = 321,
   ECHELON = 3000,
-  AVALANCHE = 43114,
-  MULTIVAC = 62621
+  MULTIVAC = 62621,
+  KAVA = 2222,
+  AVALANCHE = 43114
 }
 
 export enum TradeType {

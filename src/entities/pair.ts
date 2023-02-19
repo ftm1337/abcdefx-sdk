@@ -148,15 +148,15 @@ export class Pair {
         let _y = y * 1e18 / _d1;
         let _a = (_x * _y) / 1e18;
         let _b = ((_x * _x) / 1e18 + (_y * _y) / 1e18);
-        return _a * _b / 1e18;  // x3y+y3x >= k
+        return Math.floor(_a * _b / 1e18);  // x3y+y3x >= k
     }
 
     public _SolidlyLib_f(x0: any, y: any) {
-        return x0*(y*y/1e18*y/1e18)/1e18+(x0*x0/1e18*x0/1e18)*y/1e18;
+        return Math.floor(x0*(y*y/1e18*y/1e18)/1e18+(x0*x0/1e18*x0/1e18)*y/1e18);
     }
 
     public _SolidlyLib_d( x0: any, y: any) {
-        return 3*x0*(y*y/1e18)/1e18+(x0*x0/1e18*x0/1e18);
+        return Math.floor(3*x0*(y*y/1e18)/1e18+(x0*x0/1e18*x0/1e18));
     }
 
     public _SolidlyLib_get_y( x0: any,  xy: any,  y: any)  {
@@ -172,15 +172,15 @@ export class Pair {
             }
             if (y > y_prev) {
                 if (y - y_prev <= 1) {
-                    return y;
+                    return Math.floor(y);
                 }
             } else {
                 if (y_prev - y <= 1) {
-                    return y;
+                    return Math.floor(y);
                 }
             }
         }
-        return y;
+        return Math.floor(y);
     }
 
 	///////////////////////////
