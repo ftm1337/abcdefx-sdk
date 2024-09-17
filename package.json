@@ -1,7 +1,7 @@
 {
   "name": "@ftm1337/abcdefx-sdk",
   "license": "MIT",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "🛠 An SDK for building applications on top of Guru Network's ABcDeFx Multi-chain StableSwap & Forex Market.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -15,6 +15,8 @@
   "keywords": [
     "ftm1337",
     "guru network",
+    "elite",
+    "eliteness",
     "forex",
     "stablecoin",
     "market",
@@ -23,8 +25,6 @@
     "multivac",
     "mtv",
     "dex",
-    "dxdao",
-    "swapr",
     "dao",
     "solidly",
     "elite"

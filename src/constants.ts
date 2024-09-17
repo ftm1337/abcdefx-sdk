@@ -18,7 +18,8 @@ export enum ChainId {
   ECHELON = 3000,
   MULTIVAC = 62621,
   KAVA = 2222,
-  AVALANCHE = 43114
+  AVALANCHE = 43114,
+  TEST_SONIC = 64165
 }
 
 export enum TradeType {

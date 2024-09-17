@@ -71,5 +71,6 @@ export const WETH = {
   [ChainId.ECHELON]:	new Token(ChainId.ECHELON,	'0xadEE5159f4f82a35B9068A6c810bdc6c599Ba6a8',	18,	'WECH',		'Wrapped Echelon'),
   [ChainId.MULTIVAC]:	new Token(ChainId.MULTIVAC,	'0x8E321596267a4727746b2F48BC8736DB5Da26977',	18,	'WMTV',		'Wrapped MTV'),
   [ChainId.KAVA]:		new Token(ChainId.KAVA,		'0xc86c7C0eFbd6A49B35E8714C5f59D99De09A225b',	18,	'WKAVA',	'Wrapped KAVA'),
-  [ChainId.AVALANCHE]:	new Token(ChainId.AVALANCHE,'0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',	18,	'WAVAX',	'Wrapped AVAX')
+  [ChainId.AVALANCHE]:	new Token(ChainId.AVALANCHE,'0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',	18,	'WAVAX',	'Wrapped AVAX'),
+  [ChainId.TEST_SONIC]:	new Token(ChainId.TEST_SONIC,'0x591E027153ED4e536275984e1b7573367e11dac4',	18,	'WTS',		'Wrapped Testnet Sonic')
 }
